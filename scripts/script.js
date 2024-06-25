@@ -36,6 +36,19 @@ function playRound(playerSelection) {
         result.textContent = `You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)}`;
         playerWins += 1;
     }
-    score.textContent = `Player Wins: ${playerWins}, Computer Wins: ${computerWins}, Ties: ${ties}`;
+    score.textContent = `Player Wins: ${playerWins}, Computer Wins: ${computerWins}, Ties: ${ties}.`;
+    if (playerWins == 5) {
+        playerWins = 0;
+        computerWins = 0;
+        ties = 0;
+        score.textContent += ' You won 5 rounds, you win!';
+        return
+    } else if (computerWins == 5) {
+        playerWins = 0;
+        computerWins = 0;
+        ties = 0;
+        score.textContent += ' Computer won 5 rounds, Computer wins!';
+        return
+    }
     return
 }

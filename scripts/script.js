@@ -4,7 +4,7 @@ function getComputerChoice() {
 }
 
 function playRound() {
-    let playerSelection = prompt('Select one: Rock, Paper or Scissors.').toLowerCase();
+    // let playerSelection = prompt('Select one: Rock, Paper or Scissors.').toLowerCase();
     let computerSelection = getComputerChoice().toLowerCase();
     if (playerSelection === computerSelection) {
         return `${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} ties with ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)}`;
@@ -16,6 +16,9 @@ function playRound() {
         return `You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)}`;
     }
 }
+
+const button = document.querySelector('button');
+button.addEventListener('onclick', playRound);
 
 // console.log(playRound(playerSelection, computerSelection));
 
